@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Londrina Solid", sans-serif;
+}
+
+nav {
+  background-color: #363654;
+}
+
+.nav_logo,
+.nav_link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav_logo:hover,
+.nav_link:hover {
+  color: #eaebff;
+  cursor: default;
+}
+
+.form_container {
+  background-color: rgb(54, 54, 84, 0.05);
+}
+
+.form_submit_button {
+  background-color: #363654;
+  color: white;
+}
+
+.form_submit_button:hover {
+  background-color: #eaebff;
+  color: #363654;
+}
+footer {
+  background-color: #363654;
+  color: white;
+}
