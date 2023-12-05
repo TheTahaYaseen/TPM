@@ -1,0 +1,58 @@
+{% extends "layout.html" %} {% block content %}
+<p></p>
+<div class="w-50 mx-auto">
+  <div
+    class="state_pills d-flex justify-content-between container-fluid my-3 mx-auto rounded-3"
+  >
+    <a class="nav_link fs-5" href="{% url 'home' %}"
+      >All({{all_projects_count}})</a
+    >
+    {% for state in states_with_count %}
+    <a class="nav_link fs-5" href="{% url 'home' %}?state={{state.state}}"
+      >{{state.state}}({{state.count_of_projects}})</a
+    >
+    {% endfor %}
+    <a class="nav_link fs-5" href="{% url 'states' %}">More</a>
+  </div>
+</div>
+<div class="projects_container container-fluid">
+  {% for project in projects %}
+  <divx class="row">
+    <div class="col-lg-6 project_container p-2 rounded-3 mx-auto mb-5 py-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6">
+            <p class="fs-3">{{project.name}} ({{project.abbreviation}})</p>
+          </div>
+          <div class="col-6">
+            <p class="fs-6 text-end">{{project.state.state}}</p>
+          </div>
+          <p class="fs-5">{{project.description}}</p>
+          <div class="w-50">
+            <div
+              class="state_pills container-fluid d-flex justify-content-between rounded-pill px-5"
+            >
+              <a class="nav_link fs-5" href="{% url 'project' project.id %}"
+                >View</a
+              >
+              <span class="fs-5 span_divider">|</span>
+              <a
+                class="nav_link fs-5"
+                href="{% url 'alter_project' project.id %}"
+                >Alter</a
+              >
+              <span class="fs-5 span_divider">|</span>
+              <a
+                class="nav_link fs-5"
+                href="{% url 'delete_project' project.id %}"
+                >Delete</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </divx>
+  {% endfor %}
+</div>
+{% endblock content %}

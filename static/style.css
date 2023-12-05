@@ -39,9 +39,14 @@ footer {
   color: white;
 }
 
+.state_pills,
+.states_container {
+  background-color: rgb(54, 54, 84, 0.75);
+  color: white;
+}
+
 .state_pills {
   height: 5vh;
-  background-color: rgb(54, 54, 84, 0.75);
 }
 
 .span_divider {

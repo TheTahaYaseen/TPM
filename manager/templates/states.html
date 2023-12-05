@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block content %}
+<p></p>
+<div class="w-50 mx-auto">
+  <div class="states_container container-fluid mx-auto rounded-3 py-3 px-3">
+    <p class="fs-2 mb-0 text-center">Project States</p>
+    <p class="fs-5 mt-0 text-center">
+      Click On Any To See The Project In That State.
+    </p>
+    <hr />
+    <div class="px-4">
+      <p>
+        <a class="nav_link fs-4" href="{% url 'home' %}">
+          - All({{all_projects_count}})</a
+        >
+      </p>
+      {% for state in states_with_count %}
+      <p>
+        <a class="nav_link fs-4" href="{% url 'home' %}?state={{state.state}}">
+          - {{state.state}}({{state.count_of_projects}})</a
+        >
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

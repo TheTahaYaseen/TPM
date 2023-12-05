@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="nav_logo mr-auto fs-3 my-auto" href="{% url 'home' %}"
+      >TheProjectManager</a
+    >
+    <div>
+      {% if request.user.is_authenticated %}
+      <a class="nav_link me-3 fs-5" href="{% url 'add_project' %}"
+        >Add Project</a
+      >
+      <a class="nav_link me-3 fs-5" href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a class="nav_link me-3 fs-5" href="{% url 'register' %}">Register</a>
+      <a class="nav_link me-3 fs-5" href="{% url 'login' %}">Login</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,61 @@
+{% extends "layout.html" %} {% block content %}
+<div class="form_container p-3 mt-3 w-75 mx-auto rounded-3 mb-5">
+  <h1 class="form_heading pr-5 fs-1" style="display: inline">
+    {{form_action}}
+  </h1>
+  {% if error %}
+  <p class="fs-5 mb-0 mt-0" style="display: inline">&nbsp;- {{error}}</p>
+  {% endif %}
+  <form method="POST">
+    {% csrf_token %}
+    <input
+      class="rounded-pill border-0 fs-5 w-100 p-2 mt-2 mb-1"
+      type="text"
+      placeholder="Desired Name Here...."
+      name="name"
+      value="{{name}}"
+    />
+    <input
+      class="rounded-pill border-0 fs-5 w-100 p-2 mb-1"
+      type="text"
+      placeholder="Desired Abbreviation Here...."
+      name="abbreviation"
+      value="{{abbreviation}}"
+    />
+    <input
+      class="rounded-pill border-0 fs-5 w-100 p-2 mb-1"
+      type="text"
+      placeholder="Desired Description Here...."
+      name="description"
+      value="{{description}}"
+    />
+    <input
+      class="rounded-pill border-0 fs-5 w-100 p-2 mb-1"
+      type="text"
+      placeholder="Desired Purpose Here...."
+      name="purpose"
+      value="{{purpose}}"
+    />
+    <input
+      class="rounded-pill border-0 fs-5 w-100 p-2 mb-1"
+      type="text"
+      placeholder="Desired State Here...."
+      name="state"
+      value="{{state}}"
+    />
+    <input
+      class="rounded-3 border-0 fs-5 w-100 p-2 mb-2 mt-1"
+      type="text"
+      placeholder="Desired Pseudocode Here...."
+      name="pseudocode"
+      value="{{pseudocode}}"
+    />
+    <button
+      class="rounded-pill border-0 fs-5 px-4 py-2 mb-3 form_submit_button"
+      type="submit"
+    >
+      {{form_action}}
+    </button>
+  </form>
+</div>
+{% endblock content %}

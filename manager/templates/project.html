@@ -1,0 +1,31 @@
+{% extends "layout.html" %} {% block content %}
+<p></p>
+<div class="w-50 project_container mx-auto p-2 rounded-3 mb-5 py-4">
+  <div class="container-fluid">
+    <p class="fs-3">{{project.name}} ({{project.abbreviation}})</p>
+    <hr />
+    <p class="fs-5 text-end">{{project.state.state}}</p>
+    <span class="fs-4">Project Description: </span>
+    <span class="fs-5">{{project.description}}</span>
+    <p></p>
+    <span class="fs-4">Project Purpose: </span>
+    <span class="fs-5">{{project.purpose}}</span>
+    <p></p>
+    <p class="fs-4">Project Pseudocode:</p>
+    <p class="fs-5">{{project.pseudocode}}</p>
+    <div class="w-25">
+      <div
+        class="state_pills container-fluid d-flex justify-content-between rounded-pill px-4"
+      >
+        <a class="nav_link fs-5" href="{% url 'alter_project' project.id %} "
+          >Alter</a
+        >
+        <span class="fs-5 span_divider">|</span>
+        <a class="nav_link fs-5" href="{% url 'delete_project' project.id %}"
+          >Delete</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
